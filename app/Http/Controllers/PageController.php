@@ -30,6 +30,6 @@ class PageController extends Controller
      */
     public function productDetail(Product $product)  // Laravel akan otomatis mencari produk berdasarkan slug
     {
-        // View akan menerima variabel $product secara otomatis
+        return view('pages.products.show', compact('product'));
     }
 }

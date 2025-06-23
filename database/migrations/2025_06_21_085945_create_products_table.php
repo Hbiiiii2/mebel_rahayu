@@ -18,6 +18,7 @@ return new class extends Migration {
             $table->longText('description');
             $table->string('price')->default('Hubungi Kami');
             $table->text('specifications');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

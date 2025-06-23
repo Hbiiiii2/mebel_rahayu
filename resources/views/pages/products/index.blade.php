@@ -15,7 +15,8 @@
                     <div class="bg-white rounded-lg shadow-md overflow-hidden group">
                         <a href="{{ route('products.show', $product->slug) }}" class="block">
                             <div class="h-64 overflow-hidden">
-                                <img src="{{ Storage::url($product->image) }}" alt="{{ $product->name }}"
+                                {{-- PERBAIKAN DI SINI --}}
+                                <img src="{{ asset(Storage::url($product->image)) }}" alt="{{ $product->name }}"
                                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
                             </div>
                             <div class="p-6">
@@ -30,10 +31,7 @@
                 @endforelse
             </div>
 
-            <!-- Link Paginasi -->
-            <div class="mt-12">
-                {{ $products->links() }}
-            </div>
+            <div class="mt-12">{{ $products->links() }}</div>
         </div>
     </section>
 </x-frontend-layout>
